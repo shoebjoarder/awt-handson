@@ -3,21 +3,23 @@ import React, { Component } from 'react'
 /* Automatically gets Prop objects in Class Components */
 export default class AddForm extends Component {
 	state = {
-		content: ''
+		task: ''
 	}
-	// Task: Create a handle change
+
+	/* Task 3.4: Create a handle change */
 	handleChange = (e) => {
 		this.setState({
-			content: e.target.value
+			task: e.target.value
 		});
 	}
+	/* Task 3.4: End */
 
 	handleSubmit = (e) => {
 		e.preventDefault();
 		// Task Use the prop method to pass the argument
 		this.props.addTodo(this.state);
 		this.setState({
-			content: ''
+			task: ''
 		})
 	}
 	render() {
@@ -25,7 +27,12 @@ export default class AddForm extends Component {
 			<div>
 				<form onSubmit={this.handleSubmit}>
 					<label>Add new todo:</label>
-					<input type="text" onChange={this.handleChange} value={this.state.content}/>
+
+					{/* Task 3.3: Input type text and call onChange event handler */}
+					
+					<input type="text" onChange={this.handleChange} value={this.state.task}/>
+					
+					{/* Task 3.3: End */}
 				</form>
 			</div>
 		)
