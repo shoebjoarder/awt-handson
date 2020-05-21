@@ -10,9 +10,10 @@ export default class App extends Component {
 		super(props);
 		this.state = {
 			todos: [
-				{ id: 1, content: "Buy some milk" },
-				{ id: 2, content: "Get you homework done" },
-				{ id: 3, content: "Watch television" },
+				{ id: 1, content: "Do the AWT Bootstrap & MongoDB Homework by 20th of May" },
+				{ id: 2, content: "Finish the second draft of the presentation" },
+				{ id: 3, content: "Finish the recordings of the presentation" },
+				{ id: 4, content: "Prepare the hands-on session codes and slides" }
 			]
 		}
 	}
