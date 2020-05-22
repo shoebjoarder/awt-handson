@@ -9,11 +9,11 @@ export default function Todos({todos=0, deleteTodo}) {
 				<div className="collection-item" key={todo.id}>
 					{/* <span>{todo.task}</span> */}
 
-					{/* Task 2.5: Calls the anonymous arrow function to use deleteTodo method passing the props todo.id as the input parameter */}
+					{/* Task 2.4: Calls the anonymous arrow function to use deleteTodo method passing the props todo.id as the input parameter */}
 
 					<span onClick={() => {deleteTodo(todo.id)}}>{todo.task}</span>
 
-					{/* Task 2.5: End */}
+					{/* Task 2.4: End */}
 				</div>
 			)
 		})

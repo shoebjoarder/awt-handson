@@ -5,7 +5,7 @@ import Todos from './components/Todos'
 import AddForm from './components/AddForm'
 
 export default class App extends Component {
-	/* Task 1: Create Constructor, add super(props) inside and create a state property todos array of atleast 4 elements with "id" and "task" as element's properties. id should be of type int and "task" should be of type string*/
+	/* Task 1.1: Create Constructor, add super(props) inside and create a state property todos array of atleast 4 elements with "id" and "task" as element's properties. id should be of type int and "task" should be of type string*/
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -19,23 +19,24 @@ export default class App extends Component {
 	}
 	/* Task 1: END */
 
+	/* Task 2.2: Create a deleteTodo method using arrow function to pass a parameter "id" */
 	deleteTodo = (id) => {
 		const todo = this.state.todos.filter(todo => {
 			return todo.id !== id
 		});
-		/* Task 2.4: Set state method to assign the const variable "filterTodo" to todos */
+		/* Task 2.3: Set state method to assign the const variable "filterTodo" to todos */
 		this.setState({
 			todos: todo
 		})
 		/* Task 2.4: END */
 	}
 
-	/* Task 3.2: Create Todo Method and todo as input parameter */
+	/* Task 3.1: Create Todo Method and todo as input parameter */
 	addTodo = (todo) => {
 		todo.id = Math.random();
-		let todos = [...this.state.todos, todo]
+		let newListTodos = [...this.state.todos, todo]
 		this.setState({
-			todos: todos
+			todos: newListTodos
 		})
 	}
 	/* Task 3: Ends */

@@ -16,8 +16,11 @@ export default class AddForm extends Component {
 
 	handleSubmit = (e) => {
 		e.preventDefault();
-		// Task Use the prop method to pass the argument
+		
+		/* Task 3.5: Use the prop method to pass the argument */
 		this.props.addTodo(this.state);
+		/* Task 3.4: End */
+
 		this.setState({
 			task: ''
 		})
