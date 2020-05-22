@@ -7,11 +7,11 @@ export default function Todos({todos=0, deleteTodo}) {
 		todos.map(todo => {
 			return (
 				<div className="collection-item" key={todo.id}>
-					<span>{todo.task}</span>
+					{/* <span>{todo.task}</span> */}
 
-					{/* Task 2.5: Calls the anonymous arrow function to delete a todo based on id*/}
+					{/* Task 2.5: Calls the anonymous arrow function to use deleteTodo method passing the props todo.id as the input parameter */}
 
-					{/* <span onClick={() => {deleteTodo(todo.id)}}>{todo.task}</span> */}
+					<span onClick={() => {deleteTodo(todo.id)}}>{todo.task}</span>
 
 					{/* Task 2.5: End */}
 				</div>

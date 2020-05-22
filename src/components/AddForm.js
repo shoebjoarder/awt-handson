@@ -6,7 +6,7 @@ export default class AddForm extends Component {
 		task: ''
 	}
 
-	/* Task 3.4: Create a handle change */
+	/* Task 3.4: Create a handleChange method with event parameter "e" and set state property "task", to the event parameters target value*/
 	handleChange = (e) => {
 		this.setState({
 			task: e.target.value
@@ -28,7 +28,7 @@ export default class AddForm extends Component {
 				<form onSubmit={this.handleSubmit}>
 					<label>Add new todo:</label>
 
-					{/* Task 3.3: Input type text and call onChange event handler */}
+					{/* Task 3.3: Create an onChange event handler and pass the method handleChange */}
 					
 					<input type="text" onChange={this.handleChange} value={this.state.task}/>
 					

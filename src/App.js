@@ -5,7 +5,7 @@ import Todos from './components/Todos'
 import AddForm from './components/AddForm'
 
 export default class App extends Component {
-	// Task 1.1: Create Constructor, super(props) and a todos array of atleast 4 elements
+	/* Task 1: Create Constructor, add super(props) inside and create a state property todos array of atleast 4 elements with "id" and "task" as element's properties. id should be of type int and "task" should be of type string*/
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -17,17 +17,17 @@ export default class App extends Component {
 			]
 		}
 	}
+	/* Task 1: END */
 
-	// Task 2.2: Create a Delete method and ID as input parameter
 	deleteTodo = (id) => {
-		// Task 2.3: Filter the todo list by filtering out the id onClick - maybe not use it because its more of a JavaScript basics
 		const todo = this.state.todos.filter(todo => {
 			return todo.id !== id
 		});
-		// Task 2.4: Set state method to assign the const variable to todos
+		/* Task 2.4: Set state method to assign the const variable "filterTodo" to todos */
 		this.setState({
 			todos: todo
 		})
+		/* Task 2.4: END */
 	}
 
 	/* Task 3.2: Create Todo Method and todo as input parameter */
@@ -39,11 +39,12 @@ export default class App extends Component {
 		})
 	}
 	/* Task 3: Ends */
+
 	render() {
 		return (
 			<div className="todo-app container">
 				<h1 className="center blue-text">A Simple Todo list</h1>
-				<Todos />
+				{/* <Todos /> */}
 				{/* Task 1.2: Add the Todos Component and pass the props (todos array) into the Todos component */}
 
 				{/* <Todos todos={this.state.todos} /> */}
@@ -52,13 +53,13 @@ export default class App extends Component {
 
 				{/* Task 2.1: Pass the deleteTodo method to the Todos Component */}
 
-				{/* <Todos todos={this.state.todos} deleteTodo={this.deleteTodo} /> */}
+				<Todos todos={this.state.todos} deleteTodo={this.deleteTodo} />
 
 				{/* Task 2.1: End */}
 
 				{/* Task 3.1: Pass the addTodo prop method to the AddForm Component */}
 
-				{/* <AddForm addTodo={this.addTodo} /> */}
+				<AddForm addTodo={this.addTodo} />
 
 				{/* Task 3.1: End */}
 			</div>
