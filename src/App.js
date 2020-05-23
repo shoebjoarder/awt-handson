@@ -10,7 +10,7 @@ export default class App extends Component {
 		super(props);
 		this.state = {
 			todos: [
-				{ id: 1, task: "Do the AWT Bootstrap & MongDB Homework by 20th of May" },
+				{ id: 1, task: "Do the AWT Bootstrap & MongoDB Homework by 20th of May" },
 				{ id: 2, task: "Finish the final draft of the presentation" },
 				{ id: 3, task: "Finish the recordings of the presentation" },
 				{ id: 4, task: "Prepare the hands-on session codes" },
@@ -19,27 +19,28 @@ export default class App extends Component {
 	}
 	/* Task 1: END */
 
-	/* Task 2.2: Create a deleteTodo method using arrow function to pass a parameter "id" */
+	/* Task 2.1: Create a deleteTodo method using arrow function to pass a parameter "id" */
 	deleteTodo = (id) => {
-		const todo = this.state.todos.filter(todo => {
+	/* Task 2.1: END */
+		const filteredTodo = this.state.todos.filter(todo => {
 			return todo.id !== id
 		});
-		/* Task 2.3: Set state method to assign the const variable "filterTodo" to todos */
+		/* Task 2.2: Set state method to assign the const variable "filterTodo" to todos */
 		this.setState({
-			todos: todo
+			todos: filteredTodo
 		})
-		/* Task 2.4: END */
+		/* Task 2.2: END */
 	}
 
-	/* Task 3.1: Create Todo Method and todo as input parameter */
-	addTodo = (todo) => {
-		todo.id = Math.random();
-		let newListTodos = [...this.state.todos, todo]
+	/* Task 3.1: Create Todo Method and todo as input parameter, assign the todo variable with Math.random() function, use the spread operator to inject the new todo inside a new list called newListTodos, set the state property todos with the newListTodos */
+	addTodo = (newTodo) => {
+		newTodo.id = Math.random();
+		let newListTodos = [...this.state.todos, newTodo]
 		this.setState({
 			todos: newListTodos
 		})
 	}
-	/* Task 3: Ends */
+	/* Task 3.1: Ends */
 
 	render() {
 		return (
@@ -52,18 +53,19 @@ export default class App extends Component {
 
 				{/* Task 1.2: End */}
 
-				{/* Task 2.1: Pass the deleteTodo method to the Todos Component */}
+				{/* Task 2.3: Pass the deleteTodo method to the Todos Component */}
 
-				<Todos todos={this.state.todos} deleteTodo={this.deleteTodo} />
+				<Todos todoProp={this.state.todos} deleteTodoFunc={this.deleteTodo} />
 
-				{/* Task 2.1: End */}
+				{/* Task 2.3: End */}
 
-				{/* Task 3.1: Pass the addTodo prop method to the AddForm Component */}
+				{/* Task 3.2: Pass the addTodo prop method to the AddForm Component */}
 
 				<AddForm addTodo={this.addTodo} />
-
-				{/* Task 3.1: End */}
+				
+				{/* Task 3.2: End */}
 			</div>
 		)
 	}
 }
+
